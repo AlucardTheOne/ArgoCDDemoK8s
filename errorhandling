@@ -1,1 +1,3 @@
- Error response from daemon: Head "https://ghcr.io/v2/alucardtheone/argocddemo/manifests/latest": unauthorized
+
+Container is terminated because of Error. It exited with exit code 1. It is not started and not ready.
+The container last terminated a few seconds ago with exit code 1 because of Error
