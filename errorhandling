@@ -1,2 +1,22 @@
-Resource not found in cluster: apps/v1/Deployment:spring-boot-app
-Please update your resource specification to use the latest Kubernetes API resources supported by the target cluster. The recommended syntax is apps/v1/Deployment:spring-boot-app
+kubectl get deploy -A | grep spring-boot-app
+kubectl -n argocd get application <app-name> -o yaml | less
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-app
+  template:
+    metadata:
+      labels:
+        app: spring-boot-app
+    spec:
+      containers:
+        - name: spring-boot
+          image: your-image:tag
+          ports:
+            - containerPort: 8080
