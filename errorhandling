@@ -1,7 +1,7 @@
-kubectl patch clusterrole argocd-applicationset-controller \
+kubectl patch clusterrole argocd-application-controller \
   --type='json' \
   -p='[{"op": "add", "path": "/rules/-", "value": {
-    "apiGroups": ["networking.k8s.io"],
-    "resources": ["ipaddresses"],
+    "apiGroups": [""],
+    "resources": ["pods"],
     "verbs": ["get", "list", "watch"]
   }}]'
