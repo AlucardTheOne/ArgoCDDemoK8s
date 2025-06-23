@@ -1,7 +1,7 @@
-kubectl patch clusterrole argocd-applicationset-controller \
+kubectl patch clusterrole argocd-application-controller \
   --type='json' \
   -p='[{"op": "add", "path": "/rules/-", "value": {
-    "apiGroups": ["argoproj.io"],
-    "resources": ["applicationsets", "applicationsets/finalizers", "applicationsets/status"],
-    "verbs": ["create", "delete", "get", "list", "patch", "update", "watch"]
+    "apiGroups": ["batch"],
+    "resources": ["cronjobs"],
+    "verbs": ["get", "list", "watch"]
   }}]'
