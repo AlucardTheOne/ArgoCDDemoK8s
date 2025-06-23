@@ -1,10 +1,30 @@
-apiVersion: networking.istio.io/v1beta1
-kind: DestinationRule
-metadata:
-  name: spring-boot-app2
-  namespace: default
-spec:
-  host: spring-boot-app2
-  trafficPolicy:
-    tls:
-      mode: ISTIO_MUTUAL
+Alábbi PATH-re létrehozol egy .java-t.
+src/main/java/com/yourpackage/controller/PingController.java
+To make them apps go pong when you ping them.
+---------------------------------------------------------------
+package com.yourpackage.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PingController {
+
+    @GetMapping("/ping")
+    public String ping() {
+        return "pong";
+    }
+}
+---------------------------------------------------------------
+Rebuild the app from the source. 
+./mvnw clean package
+Utána rebuildeld a docker image-t.
+docker build -t ghcr.io/|Username|/|GitRepoName|:latest
+docker push ghcr.io/|Username|/|GitRepoName|:latest
+ArgoCD should update the apps automatically.
+
+---------------------------------------------------------------
+curl http://spring-boot-app:8080/ping
+spring-boot-app az app neve ArgoCD-be
+8080 a port
+ezek eltérnek probably a gépen.
