@@ -1,2 +1,1 @@
-Resource not found in cluster: apps/v1/Deployment:spring-boot-app
-Please update your resource specification to use the latest Kubernetes API resources supported by the target cluster. The recommended syntax is apps/v1/Deployment:spring-boot-app
+ Error response from daemon: Head "https://ghcr.io/v2/alucardtheone/argocddemo/manifests/latest": unauthorized
