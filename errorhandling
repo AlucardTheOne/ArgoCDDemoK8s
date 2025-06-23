@@ -1,7 +1,2 @@
-kubectl patch clusterrole argocd-application-controller \
-  --type='json' \
-  -p='[{"op": "add", "path": "/rules/-", "value": {
-    "apiGroups": ["networking.k8s.io"],
-    "resources": ["ingresses"],
-    "verbs": ["get", "list", "watch"]
-  }}]'
+Resource not found in cluster: apps/v1/Deployment:spring-boot-app
+Please update your resource specification to use the latest Kubernetes API resources supported by the target cluster. The recommended syntax is apps/v1/Deployment:spring-boot-app
