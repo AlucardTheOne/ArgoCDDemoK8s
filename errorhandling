@@ -1,7 +1,7 @@
 kubectl patch clusterrole argocd-application-controller \
   --type='json' \
   -p='[{"op": "add", "path": "/rules/-", "value": {
-    "apiGroups": [""],
-    "resources": ["pods"],
+    "apiGroups": ["networking.k8s.io"],
+    "resources": ["ingressclasses"],
     "verbs": ["get", "list", "watch"]
   }}]'
