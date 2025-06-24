@@ -23,7 +23,7 @@ spec:
   hosts:
   - "*"
   gateways:
-  - spring-boot-gateway
+  - istio-system/spring-boot-gateway
   http:
   - route:
     - destination:
