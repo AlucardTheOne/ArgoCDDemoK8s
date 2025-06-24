@@ -3,3 +3,4 @@ istioctl install -y \
   --set values.prometheus.enabled=true \
   --set values.grafana.enabled=true \
   --set values.tracing.enabled=true
+generate config: could not unmarshal: error unmarshaling JSON: while decoding JSON: unknown field "grafana" in istio.operator.v1alpha1.Values
