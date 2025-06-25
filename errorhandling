@@ -1,1 +1,2 @@
 kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.8.7/manifests/crds.yaml
+kubectl apply -k https://github.com/argoproj/argo-cd/manifests/crds?ref=stable
