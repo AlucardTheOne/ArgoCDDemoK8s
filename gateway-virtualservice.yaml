@@ -23,7 +23,8 @@ metadata:
 spec:
   hosts:
   - "*"
-  gateways: default/spring-boot-gateway
+  gateways:
+  - default/spring-boot-gateway
   http:
   - route:
     - destination:
