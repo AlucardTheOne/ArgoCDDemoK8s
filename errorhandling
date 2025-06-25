@@ -1,8 +1,1 @@
-# Prometheus
-kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.26/samples/addons/prometheus.yaml
-
-# Jaeger (tracing)
-kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.26/samples/addons/jaeger.yaml
-
-# Grafana
-kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.26/samples/addons/grafana.yaml
+Resource not found in cluster: argoproj.io/v1alpha1/Application:app-of-apps
