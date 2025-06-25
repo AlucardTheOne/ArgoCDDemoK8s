@@ -1,43 +1,33 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: spring-boot-gateway
+  namespace: default
+spec:
+  selector:
+    istio: ingressgateway
+    namespace: istio-system
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
-apiVersion: networking.istio.io/v1beta1
 metadata:
   name: spring-boot-virtualservice
   namespace: default
-  uid: c484750d-8d2f-491c-8bd2-7349fa5c5c12
-  resourceVersion: '92695'
-  generation: 211
-  creationTimestamp: '2025-06-24T06:52:32Z'
-  annotations:
-    argocd.argoproj.io/tracking-id: >-
-      spring-boot-app1:networking.istio.io/VirtualService:default/spring-boot-virtualservice
-    kubectl.kubernetes.io/last-applied-configuration: >
-      {"apiVersion":"networking.istio.io/v1alpha3","kind":"VirtualService","metadata":{"annotations":{"argocd.argoproj.io/tracking-id":"spring-boot-app1:networking.istio.io/VirtualService:default/spring-boot-virtualservice"},"name":"spring-boot-virtualservice","namespace":"default"},"spec":{"gateways":["istio-system/spring-boot-gateway"],"hosts":["*"],"http":[{"route":[{"destination":{"host":"spring-boot-app","port":{"number":80}}}]}]}}
-  managedFields:
-    - manager: argocd-controller
-      operation: Update
-      apiVersion: networking.istio.io/v1alpha3
-      time: '2025-06-25T09:43:40Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            .: {}
-            'f:argocd.argoproj.io/tracking-id': {}
-            'f:kubectl.kubernetes.io/last-applied-configuration': {}
-        'f:spec':
-          .: {}
-          'f:gateways': {}
-          'f:hosts': {}
-          'f:http': {}
 spec:
   hosts:
-    - '*'
+  - "*"
   gateways:
-    - istio-system/spring-boot-gateway
+  - istio-system/spring-boot-gateway
   http:
-    - route:
-        - destination:
-            host: spring-boot-app
-            port:
-              number: 80
-status: {}
+  - route:
+    - destination:
+        host: spring-boot-app
+        port:
+          number: 80
