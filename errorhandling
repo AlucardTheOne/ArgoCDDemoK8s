@@ -1,2 +1,1 @@
-kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.8.7/manifests/crds.yaml
-kubectl apply -k https://github.com/argoproj/argo-cd/manifests/crds?ref=stable
+error: resource mapping not found for name: "app-of-apps" namespace: "argo" from "app-of-apps.yaml": no matches for kind "Application" in version "app/v1"                                                      ensure CRDs are installed first
