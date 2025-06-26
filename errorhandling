@@ -1,1 +1,1 @@
-error: resource mapping not found for name: "app-of-apps" namespace: "argo" from "app-of-apps.yaml": no matches for kind "Application" in version "app/v1"                                                      ensure CRDs are installed first
+Error from server (BadRequest): error when creating "app-of-apps.yaml": Application in version "v1alpha1" cannot be handled as a Application: strict decoding error: unknown field "spec.directory"
